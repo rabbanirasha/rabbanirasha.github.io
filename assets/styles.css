@@ -4,12 +4,47 @@
 } */
 
 body {
-    cursor: url('img/cursor.png'), auto !important;	
+    cursor: url('img/cursor.png'), auto;
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+    overflow-x: hidden;
+}
+
+/* Decorative blurred color blobs (top-left purple, top-right purple, center orange) */
+body::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+      radial-gradient(30rem 20rem at 8% 18%, rgba(128,79,255,0.28) 0%, rgba(128,79,255,0.18) 20%, transparent 45%),
+      radial-gradient(28rem 18rem at 88% 14%, rgba(140,90,255,0.20) 0%, rgba(140,90,255,0.14) 18%, transparent 42%),
+      radial-gradient(36rem 24rem at 50% 42%, rgba(255,170,100,0.22) 0%, rgba(255,170,100,0.14) 22%, transparent 48%);
+    filter: blur(60px) saturate(120%);
+    transform: translateZ(0);
+}
+
+/* subtle ground glow under the fold */
+body::after{
+    content: '';
+    position: fixed;
+    inset: auto 0 0 0;
+    height: 48vh;
+    z-index: -3;
+    background: radial-gradient(50% 40% at 50% 30%, rgba(255,165,90,0.14), transparent 60%);
+    filter: blur(48px);
 }
 
 #nameplate{
     border-radius: 15px;
-    background: linear-gradient(to left, #d3cce3, #e9e4f0);
+    background: rgba(255,255,255,0.40) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    backdrop-filter: blur(6px) !important;
+    border: 3px solid rgba(255,255,255,0.92); /* thicker white border */
+    box-shadow: 0 12px 40px rgba(2,6,23,0.06);
+    padding: 3rem 2rem;
 }
 .btn-social{
     border: 2px solid black;
@@ -70,7 +105,8 @@ body {
   }
 
 .portfolio-item-caption{
-    border-radius: 15px !important;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.06); /* keep caption dark overlay subtle */
 }
 .img-fluid{
     border-radius: 15px;
@@ -82,8 +118,8 @@ body {
     color: #2c3e50;
 }
 .folio-rule{
-    width:50px !important;
-    height:5px !important;
+    width:50px;
+    height:5px;
     color: #18bc9c;
 }
 .folio-card-body{
@@ -93,24 +129,34 @@ body {
 }
 .skill-card{
     border-radius: 15px;
-    background:  #e9e4f0;
-    transition: all .2s ease-in-out;
-
+    background: rgba(255,255,255,0.6);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    transition: transform .18s ease-in-out, background .18s ease-in-out, box-shadow .18s ease-in-out;
+    border: 1px solid rgba(255,255,255,0.6);
 }
 .skill-card:hover {
-    background-color: #2c3e50;
-    transform: scale(1.05);
-    color: #fff;
+    /* keep frosted look but add a subtle tint and lift */
+    transform: translateY(-6px) scale(1.03);
+    background: linear-gradient(180deg, rgba(24,188,156,0.06), rgba(24,188,156,0.04));
+    border-color: rgba(24,188,156,0.18);
+    box-shadow: 0 12px 30px rgba(2,6,23,0.08);
+    color: #2c3e50; /* keep text readable and not inverted */
 }
 .folio-crd{
     border-radius: 15px;
-    background:#e9e4f0;
-    border:none;
+    background: rgba(255,255,255,0.62);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.7);
 }
 .carousel-inner{
     border-radius: 15px;
-    background:#e9e4f0;
+    background: rgba(255,255,255,0.65);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
     text-align: center;
+    border: 1px solid rgba(255,255,255,0.6);
 
 }
 .carousel-control-prev{
@@ -158,9 +204,92 @@ body {
     background:#e9e4f0;
   }
 
-  footer{
-    padding-top: 2rem !important;
-    background-color: #c8fff4 !important;
-    color:#2c3e50 !important;
-  }
+    footer{
+        padding-top: 2rem;
+        background-color: #c8fff4;
+        color:#2c3e50;
+    }
+
+/* Frosted glass navbar */
+/* Targets the fixed navbar with id mainNav. Uses backdrop-filter where supported and
+   falls back to a semi-opaque background where it's not. Kept minimal to avoid
+   interfering with Bootstrap classes. */
+#mainNav{
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.45);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+}
+
+/* If the browser doesn't support backdrop-filter, prefer a slightly more opaque fallback */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+    #mainNav{
+        background: rgba(255,255,255,0.92);
+    }
+}
+
+/* Navbar brand (logo) should sit nicely on the frosted background */
+#mainNav .navbar-brand img{
+    background: transparent;
+}
+
+/* Nav links colour and interaction */
+#mainNav .nav-link{
+    color: black !important;
+    font-weight: 600;
+}
+#mainNav .nav-link:hover,
+#mainNav .nav-link:focus,
+#mainNav .nav-item.active .nav-link{
+    color: #fff !important;
+    background-color: #18bc9c;    
+}
+
+/* Toggler button tweaks so hamburger is visible on the frosted background */
+.navbar-toggler{
+    border: 1px solid rgba(2,6,23,0.06);
+    background: rgba(255,255,255,0.85);
+    color: #2c3e50;
+    padding: 0.35rem 0.6rem;
+    box-shadow: 0 4px 12px rgba(2,6,23,0.06);
+}
+.navbar-toggler .fa{
+    color: inherit;
+    font-size: 18px;
+}
+
+/* Collapsed menu background and link colors for readability on mobile */
+.navbar-collapse{
+    backdrop-filter: none; /* avoid double blur inside collapse */
+}
+.navbar-collapse .nav-link{
+    color: #2c3e50;
+}
+
+/* Ensure navbar sits above blobs and page content */
+#mainNav{
+    z-index: 1040;
+}
+
+/* Improve nav link contrast and spacing */
+#mainNav .nav-link{
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+#mainNav .nav-link:hover,
+#mainNav .nav-link:focus,
+#mainNav .nav-item.active .nav-link{
+    color: #18bc9c;
+}
+
+/* Accessibility: Reduce motion/animations won't affect the frosted effect, but
+   if user prefers reduced transparency we keep background solid */
+@media (prefers-reduced-motion: reduce) {
+    #mainNav{
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background: rgba(255,255,255,0.95);
+        box-shadow: none;
+    }
+}
 
