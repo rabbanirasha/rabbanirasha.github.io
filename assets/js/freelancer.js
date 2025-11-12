@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <hr style="width: 100%;margin-top: 0px;">
                             <p>${project.duration}</p>
                         `;
-                        document.getElementById('modalButton').className = `btn ${project.buttonClass}`;
+                        document.getElementById('modalButton').className = 'btn btn-primary';
                     }
                 }
             });
