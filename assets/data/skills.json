@@ -1,0 +1,82 @@
+[
+  {
+    "icon": "fab fa-php",
+    "title": "PHP",
+    "preference": "Preference: Laravel, Pure PHP"
+  },
+  {
+    "icon": "fab fa-html5",
+    "title": "HTML5",
+    "preference": "Preference: Bootstrap, MDL"
+  },
+  {
+    "icon": "fab fa-js",
+    "title": "JavaScript",
+    "preference": "Preference: JQuery, React (next.js), LiveWire"
+  },
+  {
+    "icon": "fas fa-database",
+    "title": "SQL/DBMS",
+    "preference": "Preference: MySQL, MSSQL, Oracle DB"
+  },
+  {
+    "icon": "fab fa-python",
+    "title": "Python",
+    "preference": "Preference: Pure Python"
+  },
+  {
+    "icon": "fab fa-cuttlefish",
+    "title": "C/C++",
+    "preference": "Preference: Pure C/C++"
+  },
+  {
+    "icon": "fab fa-java",
+    "title": "Java",
+    "preference": "Preference: Android Studio, Pure Java"
+  },
+  {
+    "icon": "fas fa-terminal",
+    "title": "Shell Scripting",
+    "preference": "Preference: Bash"
+  },
+  {
+    "icon": "fab fa-microsoft",
+    "title": "Microsoft Office",
+    "preference": "Word, PowerPoint, Excel, Access, Project, Publisher, Visio"
+  },
+  {
+    "icon": "far fa-file-pdf",
+    "title": "Adobe Suite",
+    "preference": "Photoshop, Premiere Pro, XD, Dreamweaver, Illustrator, Lightroom"
+  },
+  {
+    "icon": "fas fa-user-shield",
+    "title": "System Administration",
+    "preference": "Preference: Microsoft Active Directory, Group Policy Objects, Server Setup"
+  },
+  {
+    "icon": "fas fa-wifi",
+    "title": "IoT",
+    "preference": "Preference: Arduino, Raspberry Pi"
+  },
+  {
+    "icon": "fas fa-layer-group",
+    "title": "CAD",
+    "preference": "AutoCAD, Xilinx, ModelSim Altera, Cadence, SketchUp"
+  },
+  {
+    "icon": "fas fa-magic",
+    "title": "RPA",
+    "preference": "Preference: UIPath"
+  },
+  {
+    "icon": "fas fa-code-branch",
+    "title": "Source Control",
+    "preference": "Preference: Git"
+  },
+  {
+    "icon": "fas fa-chart-pie",
+    "title": "Business Analytics",
+    "preference": "Preference: Microsoft PowerBI"
+  }  
+]

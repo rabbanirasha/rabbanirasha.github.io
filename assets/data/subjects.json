@@ -1,0 +1,121 @@
+[
+    {
+      "id": "modalolvlsubjects",
+      "title": "O-Level Subjects",
+      "type": "simple",
+      "items": [
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "General Mathematics",
+        "Additional Mathematics",
+        "English Language",
+        "Bengali",
+        "Bangladesh Studies",
+        "Environmental Management",
+        "Computer Studies"
+      ]
+    },
+    {
+      "id": "modalalvlsubjects",
+      "title": "A-Level Subjects",
+      "type": "simple",
+      "items": [
+        "Physics",
+        "Chemistry",
+        "Biology",
+        "Mathematics",
+        "Computing"
+      ]
+    },
+    {
+      "id": "modalbscsubjects",
+      "title": "Undergraduate Courses",
+      "type": "grouped",
+      "groups": [
+        {
+          "name": "University Core",
+          "items": [
+            "BIO103 - Biology I",
+            "ECO101 - Introduction to Microeconomics",
+            "ENG103 - Intermediate Composition",
+            "ENG111 - Public Speaking",
+            "ENG115 - Introduction to Literature",
+            "HIS102 - Introduction to World Civilization",
+            "LBA101 - Bangladesh: Culture and Heritage",
+            "PHI104 - Introduction to Ethics",
+            "POL101 - Political Science",
+            "SOC101 - Introduction to Sociology"
+          ]
+        },
+        {
+          "name": "SEPS Core",
+          "items": [
+            "CHE101 - General Chemistry",
+            "CSE115 - Computing Concepts",
+            "EEE154 - Engineering Drawing",
+            "EEE452 - Engineering Economics and Management",
+            "MAT116 - Pre-Calculus",
+            "MAT120 - Calculus and Analytic Geometry I",
+            "MAT125 - Introduction to Linear Algebra",
+            "MAT130 - Calculus and Analytic Geometry II",
+            "MAT250 - Calculus and Analytic Geometry IV",
+            "MAT350 - Engineering Mathematics",
+            "MAT361 - Probability and Statistics",
+            "PHY107 - General Physics I",
+            "PHY108 - General Physics II"
+          ]
+        },
+        {
+          "name": "CSE Major Core",
+          "items": [
+            "CSE135 - Fundamentals of Computer Programming",
+            "CSE173 - Discrete Mathematics",
+            "CSE225 - Data Structures",
+            "CSE231 - Digital Logic",
+            "CSE311 - Database Management System",
+            "CSE323 - Operating Systems Design",
+            "CSE327 - Software Engineering",
+            "CSE331 - Microprocessor Interfacing",
+            "CSE332 - Computer Organization and Architecture",
+            "CSE373 - Design and Analysis of Algorithms",
+            "CSE425 - Concepts of Programming Language",
+            "EEE111 - Analog Electronics",
+            "EEE141 - Electrical Circuits"
+          ]
+        },
+        {
+          "name": "CSE Major Elective",
+          "items": [
+            "CSE413 - Verilog HDL: Modeling, Simulation and Synthesis",
+            "CSE435 - Introduction to VLSI Design",
+            "CSE482 - Internet and Web Technology"
+          ]
+        },
+        {
+          "name": "CSE Major Capstone Design Project",
+          "items": [
+            "CSE299 - Junior Design Project",
+            "CSE499 - Senior Design Project"
+          ]
+        },
+        {
+          "name": "Intern/Co-op/Directed Research",
+          "items": [
+            "CSE498R - Internship"
+          ]
+        },
+        {
+          "name": "Other Courses",
+          "items": [
+            "ANT101 - Introduction to Anthropology",
+            "CSE257 - Numerical Methods",
+            "EEE331 - Data Communications and Computer Networks",
+            "ENG105 - Advanced Composition",
+            "ENV107 - Introduction to Environmental Science",
+            "MAT240 - Calculus and Analytic Geometry III"
+          ]
+        }
+      ]
+    }
+  ]

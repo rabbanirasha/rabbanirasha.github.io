@@ -24,6 +24,9 @@ body::before{
       radial-gradient(36rem 24rem at 50% 42%, rgba(255,170,100,0.22) 0%, rgba(255,170,100,0.14) 22%, transparent 48%);
     filter: blur(60px) saturate(120%);
     transform: translateZ(0);
+    /* subtle, very slow drifting animation + per-blob background motion */
+    animation: blobs-drift 40s linear infinite alternate, bp-pos 68s ease-in-out infinite alternate;
+    background-position: 8% 18%, 88% 14%, 50% 42%;
 }
 
 /* subtle ground glow under the fold */
@@ -34,18 +37,79 @@ body::after{
     height: 48vh;
     z-index: -3;
     background: radial-gradient(50% 40% at 50% 30%, rgba(255,165,90,0.14), transparent 60%);
-    filter: blur(48px);
+        filter: blur(48px);
+    /* slow subtle ground glow movement and slight positional motion for the mid blob */
+    animation: blobs-glow 50s ease-in-out infinite alternate, bp-pos-after 82s cubic-bezier(.2,.7,.2,1) infinite alternate;
+    background-position: 50% 42%, 50% 30%;
 }
 
-#nameplate{
+/* Gentle keyframes for the blob layers */
+@keyframes blobs-drift {
+    0% {
+        transform: translate3d(-8px, -6px, 0) scale(1);
+        opacity: 0.95;
+        filter: blur(58px) saturate(120%);
+    }
+    100% {
+        transform: translate3d(8px, 6px, 0) scale(1.02);
+        opacity: 1;
+        filter: blur(62px) saturate(130%);
+    }
+}
+
+@keyframes blobs-glow {
+    0% {
+        transform: translate3d(-4px, 0, 0) scale(1);
+        opacity: 0.92;
+        filter: blur(48px) saturate(110%);
+    }
+    100% {
+        transform: translate3d(4px, 6px, 0) scale(1.01);
+        opacity: 1;
+        filter: blur(52px) saturate(120%);
+    }
+}
+
+/* Per-blob background-position animation for the three gradients in body::before.
+     Each comma-separated position corresponds to each radial-gradient; values move at
+     slightly different paths to create an organic, non-uniform motion. */
+@keyframes bp-pos {
+    0% {
+        background-position: 6% 16%, 90% 12%, 50% 42%;
+    }
+    50% {
+        background-position: 12% 20%, 84% 18%, 52% 46%;
+    }
+    100% {
+        background-position: 8% 18%, 88% 14%, 50% 42%;
+    }
+}
+
+/* Slightly different position animation for the mid/ground blob + glow in ::after */
+@keyframes bp-pos-after {
+    0% { background-position: 48% 40%, 50% 30%; }
+    50% { background-position: 52% 44%, 54% 34%; }
+    100% { background-position: 50% 42%, 50% 30%; }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+.nameplate{
     border-radius: 15px;
-    background: rgba(255,255,255,0.40) !important;
     -webkit-backdrop-filter: blur(6px) !important;
     backdrop-filter: blur(6px) !important;
     border: 3px solid rgba(255,255,255,0.92); /* thicker white border */
     box-shadow: 0 12px 40px rgba(2,6,23,0.06);
     padding: 3rem 2rem;
 }
+
 .btn-social{
     border: 2px solid black;
     color:black;
@@ -103,62 +167,6 @@ body::after{
   .step:last-child .circle:after {
     display: none
   }
-
-.portfolio-item-caption{
-    border-radius: 15px;
-    background: rgba(255,255,255,0.06); /* keep caption dark overlay subtle */
-}
-.img-fluid{
-    border-radius: 15px;
-}
-.text-uppercase{
-    color: #18bc9c;
-}
-.folio-card-title{
-    color: #2c3e50;
-}
-.folio-rule{
-    width:50px;
-    height:5px;
-    color: #18bc9c;
-}
-.folio-card-body{
-    font-size: 18px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.skill-card{
-    border-radius: 15px;
-    background: rgba(255,255,255,0.6);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    transition: transform .18s ease-in-out, background .18s ease-in-out, box-shadow .18s ease-in-out;
-    border: 1px solid rgba(255,255,255,0.6);
-}
-.skill-card:hover {
-    /* keep frosted look but add a subtle tint and lift */
-    transform: translateY(-6px) scale(1.03);
-    background: linear-gradient(180deg, rgba(24,188,156,0.06), rgba(24,188,156,0.04));
-    border-color: rgba(24,188,156,0.18);
-    box-shadow: 0 12px 30px rgba(2,6,23,0.08);
-    color: #2c3e50; /* keep text readable and not inverted */
-}
-.folio-crd{
-    border-radius: 15px;
-    background: rgba(255,255,255,0.62);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(255,255,255,0.7);
-}
-.carousel-inner{
-    border-radius: 15px;
-    background: rgba(255,255,255,0.65);
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.6);
-
-}
 .carousel-control-prev{
     position: absolute;
     top: 0;
@@ -189,26 +197,29 @@ body::after{
 
   .list-group-item {
     border:none;
+    background-color: transparent;
   }
 
   .list-group-item.active {
-    border-radius: 10px;
-    background:#e9e4f0;
-    color: #2c3e50;
+    border-radius: 15px;
+    -webkit-backdrop-filter: blur(6px) !important;
+    backdrop-filter: blur(6px) !important;
+    border: 3px solid rgba(255,255,255,0.92); /* thicker white border */
+    box-shadow: 0 12px 40px rgba(2,6,23,0.06);
+    background-color: transparent;
+    color: black;
     font-weight: bolder;
-    border:none;
   }
   
   #nav-tabContent{
     border-radius: 15px;
-    background:#e9e4f0;
+    -webkit-backdrop-filter: blur(6px) !important;
+    backdrop-filter: blur(6px) !important;
+    border: 3px solid rgba(255,255,255,0.92); /* thicker white border */
+    box-shadow: 0 12px 40px rgba(2,6,23,0.06);
+    background-color: transparent;
+    color: black;
   }
-
-    footer{
-        padding-top: 2rem;
-        background-color: #c8fff4;
-        color:#2c3e50;
-    }
 
 /* Frosted glass navbar */
 /* Targets the fixed navbar with id mainNav. Uses backdrop-filter where supported and
@@ -293,3 +304,157 @@ body::after{
     }
 }
 
+.folio-rule{
+    border:none;
+    height: 0px !important;
+}
+
+/* ===== SITE FOOTER STYLES (matching screenshot design) ===== */
+
+/* Main footer container with dark teal background and geometric decoration */
+.site-footer{
+    background: linear-gradient(135deg, #113d3c 0%, #113d3c 50%, #113d3c 100%);
+    color: #e6f7f2;
+    margin-top: 4rem;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Geometric line decorations (pseudo-element SVG background) */
+.site-footer::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 400' preserveAspectRatio='xMidYMid slice' opacity='0.15'><g stroke='%23ffffff' stroke-width='1' fill='none'><path d='M 200 50 Q 400 150 600 100'/><path d='M 800 80 Q 900 200 1000 120'/><path d='M 1200 60 Q 1100 300 1300 350'/><path d='M 100 200 L 300 350'/><path d='M 1100 100 L 1350 300'/></g></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.site-footer-inner{
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Footer brand logo styling */
+.site-footer .footer-brand img{
+    background: transparent;
+    width: 150px;
+    height: auto;
+}
+
+/* Footer section headings */
+.site-footer .footer-heading{
+    color: rgba(255,255,255,0.98);
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Footer paragraph text */
+.site-footer p{ 
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Footer link styling */
+.site-footer .footer-links{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.site-footer .footer-links a{
+    color: rgba(255,255,255,0.78);
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 14px;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.site-footer .footer-links a:hover{ 
+    color: #ffd9a6;
+    text-decoration: underline;
+}
+
+/* Social media icons */
+.footer-social a{ 
+    color: rgba(255,255,255,0.9);
+    margin-right: 16px;
+    display: inline-block;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover{ 
+    color: #ffd9a6;
+    transform: translateY(-3px);
+}
+
+/* Back to top button */
+.back-to-top{
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover{
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.6);
+    color: #ffd9a6;
+}
+
+/* Orange/gold stripe at bottom */
+.site-footer-stripe{
+    height: 22px;
+    background: linear-gradient(180deg, #e8a13a 0%, #d58e2a 100%);
+    border-radius: 0;
+}
+
+/* Copyright text section */
+.site-footer-copy{
+    background: rgba(2,6,23,0.06);
+    color: rgba(255,255,255,0.85);
+    font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px){
+    .site-footer{ 
+        border-radius: 12px;
+        margin-top: 2rem;
+    }
+    .site-footer-inner{ 
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: 2rem;
+        padding-bottom: 0.5rem;
+    }
+    .site-footer .footer-heading{
+        font-size: 14px;
+        margin-bottom: 1rem;
+    }
+    .footer-social a{ 
+        margin-right: 12px;
+        font-size: 16px;
+    }
+    .back-to-top{
+        padding: 0.4rem 0.8rem;
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "id": "rpa",
+    "title": "Description of the Project",
+    "heading": "ROBOTIC PROCESS AUTOMATION (RPA)",
+    "subtitle": "Automating the monthly bill generation of CDBL through RPA using UIPath",
+    "content": "<p align='justify'>This program generates PDF of bill and renames its filename for each DP automatically by varying the DPID, bill_month and bill_date string of a web link in a loop, from a recipient list of DP IDs (usually about 400 entries) in spreadsheet file, and also splits Bill PDF into individual pages or range of pages and renames each of them according to spreadsheet data. This eased off the workload of assigned person as only bill date and period is entered once and the rest is done by the program, unlike previously where the person had to repeat the process of entering ID of a DP (Depository Participant) and bill info to Oracle based software and then renaming the generated file hundred of times for all DPs.<br><a href='assets/img/cdblrpaSS.png'>View picture of RPA sequence of the project</a></p><img src='assets/img/portfolio-3.jpg' width='100%'>",
+    "technology": "The sequence is implemented using UIPath Studio and the custom input page is made using HTML and Javascript.",
+    "role": "I solely developed this program for CDBL after finding out that generating bills required repetitive manual input and manipulation.",
+    "duration": "February 2020 to March 2020",
+    "buttonClass": "btn-dark"
+  },
+  {
+    "id": "cdblweb",
+    "title": "Description of the Project",
+    "heading": "NEW OFFICIAL WEBSITE OF CDBL",
+    "subtitle": "A redesigned facelift of Official Website of CDBL featuring dynamic and responsive pages",
+    "content": "<p align='justify'>A new official website of CDBL (<a href='https://www.cdbl.com.bd' target='blank'>www.cdbl.com.bd</a>) built from the ground up for the modern web and devices which is dynamic and responsive with real-time data presentation and less amount of navigation, while keeping the actions as consistent as before so visitors do not have to face steep learning curves. Notable features include:</p><ul align='justify'><li>Responsive and Dynamic Contents for fast performance, better maintainability and seamless adaptability with devices of any screen size, irrespective of its platform.</li><li>Better organization of news – separate Corporate Actions, Special News and Events.</li><li>All banners collected in one place in a Carousel.</li><li>Built-in Search input for searching the whole website.</li><li>Scroller for better accessibility of top news</li><li>Events calendar</li><li>Frequently asked questions all in one place.</li><li>News article shown like online news portal with related news of same issuer, or same type of news (special/event) whichever applies.</li><li>List of DPs filterable via buttons (tabs) with dedicated list search and also sortable.</li><li>List of ISINs and Issuers with dedicated list search and also sortable.</li><li>A page for CDBL operating instructions.</li><li>Photo Gallery with live photo viewer.</li><li>Historical view of each market/CDBL stat, like market value, etc.</li><li>More CDBL statistics.</li><li>One-click register and login button at Navbar.</li><li>View location of CDBL Head Office with Google Maps.</li><li>Complete redesign of account details page to show all information, both holding and transaction records on the same page interchangeable by using tabs.</li></ul><img src='assets/img/cdblhomepage_new.jpg' width='100%'>",
+    "technology": "HTML, CSS (Bootstrap 4), Javascript (JQuery), AJAX, PHP (Vanilla, PDO connection), MySQL",
+    "role": "I solely developed the frontend, including UI/UX design and created new MySQL tables in addition to importing previous website's database, and also the basic PDO connection, while the PHP coding was done by me and my Head together.",
+    "duration": "August 2019 to December 2019",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "ccam",
+    "title": "Description of the Project",
+    "heading": "CUSTOMER COMPLAINT ADDRESS MODULE (CCAM)",
+    "subtitle": "A Platform to centrally address investor complaints by Unifying all Participants of the Capital Market",
+    "content": "<p align='justify'>CCAM - short for Customer Complaint Address Module, is an online Module to address complaints of the customers of the Capital Market, developed by CDBL for Bangladesh Securities and Exchange Commission. This application is used by every institution so that any complaint against an institution can be viewed by the corresponding institution directly and take necessary actions, which is notified to the customer. Precisely, CCAM is a multi-user platform that allows investors (customers) to file complaint about any Broker, Exchange, Issuer and Merchant Bank (institution) and respective entity settles it quickly using the same platform. The customer can also track status of his complaints and appeal if the conclusion is not satisfactory. This results is significantly fast resolve of complaints, transparency and immediate acknowledgement of complaint submission. <br> <a href='https://www.cdbl.com.bd/complaints.sec.gov.bd/' target='blank'>Go to CCAM</a></p><img src='assets/img/ccamdemo.png' width='100%'>",
+    "technology": "HTML and CSS (Materialize), PHP, Javascript",
+    "role": "For CCAM, I designed the interface of Public Stats page using bootstrap and also learned about its levels of operation and flow of processes.",
+    "duration": "February 2019 to September 2019",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "dseweb",
+    "title": "Description of the Project",
+    "heading": "RESPONSIVE OFFICIAL WEBSITE OF DSE",
+    "subtitle": "An Overhaul of the Existing Website to Enable Responsiveness",
+    "content": "<p align='justify'>The existing website is slightly updated to enable responsiveness and make it easier to the eyes by adding media query classes to HTML elements and omitting unnecessary elements like borders and colors, and the PHP version was also updated to 7. The overhauled website is slated to be released soon.<br><a href='http://backup2.dsebd.org'>Link to website</a></p><img src='assets/img/dsewebdemo.png' width='100%'>",
+    "technology": "HTML, CSS, Javascript, PHP",
+    "role": "I made a set of recommendations for their website including how to show market data as part of my internship course, written in my internship report. The report can be found at my ResearchGate.",
+    "duration": "January 2019 to March 2019",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "dsesp",
+    "title": "Description of the Project",
+    "heading": "MICROSOFT SHAREPOINT DEPLOYMENT",
+    "subtitle": "Setting up DSE with Microsoft SharePoint for Enabling Collaboration between its Employees",
+    "content": "<p align='justify'>Dhaka Stock Exchange (DSE) decided to use Microsoft SharePoint as their tool for communication and collaboration between its employees, as DSE already has its email and people directory set up with Microsoft Exchange. During my internship, the project just got approval from top management and steps were taken to seek deployment assistance from Microsoft.</p>",
+    "technology": "<p align='justify'>SharePoint is a web-based collaborative platform where clients of a domain powered by MS Exchange Server can log in to collaborate; for example, by managing documents.</p>",
+    "role": "<p align='justify'>I observed how the IT infrastructure department was communicating with top management and Microsoft through emails and its approach for the project. I also suggested deploying Microsoft Teams instead as the latter is basically Exchange Server, SharePoint and Skype combined into a single solution, which would increase productivity and omit extra tools.</p>",
+    "duration": "January 2019 to March 2019",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "sipasset",
+    "title": "Description of the Project",
+    "heading": "SIP ASSET MANAGEMENT WEBAPP",
+    "subtitle": "Invest Money and Get Better Returns through Systematic Investment Plan using this Webapp",
+    "content": "<p align='justify'>A mobile friendly and responsive Progressive Web Application solution that can be used by an Asset Management Company to simplify the process of registering and managing portfolio of Systematic Investment Plan so that investors will be able to conveniently carry out all the essential activities related to Systematic Investment Plan, anywhere as long as they are connected online. The overall system is designed into two main parts, the customer interface (link below) and Admin Panel. The customer panel should be able to interact very friendly with the customer on whatever device she is on. This internal part consists of few features, which enables the customer to get the maximum service from her investment. The Admin Panel is designed for Asset Manager. It contains all the controls needed to provided operations that are usually done by the asset manager. Whatever the asset manager does is updated on the customer interface via the backend MySQL database.<br>Features of this system:</p><ul align='justify'><li><span style='text-decoration: underline;'>Account System</span>: Customer can sign in to his personalized account and have a quick glance of useful information, like his schemes and its details, profile, etc.</li><li><span style='text-decoration: underline;'>Return Predictor</span>: Redemption value can be estimated after a given tenure with given return rate and balance (investment amount). This value includes both capital gain and dividend return.</li><li><span style='text-decoration: underline;'>Adding Scheme</span>: Since a customer can have multiple mutual funds, she can add schemes in her account. The aggregate of the value of each fund/scheme is subject to changes depending on the unit price (NAV) of the fund. Each scheme is identified by asset manager via registration key and is associated with respective customer.</li><li><span style='text-decoration: underline;'>Admin Panel</span>: This is the page for asset manager which is used to update the information of mutual funds, acknowledge payment, buy/sell units of a mutual fund, and view a user's information and the user's scheme.</li></ul><p align='justify'><a href='https://rashaportfolio.000webhostapp.com/SIP/' target='blank'>Demo Here</a></p><iframe width='100%' height='315' src='https://www.youtube.com/embed/2pgsp244EaU' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+    "technology": "HTML, CSS (Material Design Lite), PHP, MySQL, AJAX, JavaScript, Service Worker",
+    "role": "I was the sole developer of this whole project including all its technology, for my undergraduate thesis. The thesis report can be found at my ResearchGate.",
+    "duration": "January to April 2018",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "neelam",
+    "title": "Description of the Project",
+    "heading": "NEELAM: AN AUCTION SITE",
+    "subtitle": "An E-commerce Website that lets anyone Sell Item at Auction and Buy Item by Bidding",
+    "content": "<p align='justify'>Neelam is an auction site, like eBay. It makes items available for a limited time in which a base price is set for the item and interested buyers place bids. After the time is over only the person who placed the highest bid could buy the item. It is kept intuitive and minimalistic as possible so that everyone will be able to use it to find items quickly. It has an account system for users and a review system for the items. Users will be able to both buy and sell items, bridging the imbalance of people trying to discard an item and people wanting the same item.<br><a href='https://rashaportfolio.000webhostapp.com/neelam/' target='blank'>Demo Here</a></p><img src='assets/img/neelamdemo.png' width='100%'>",
+    "technology": "HTML, CSS (Bootstrap 3.3.7), PHP, MySQL",
+    "role": "<p align='justify'>I gave the idea of making an auction site to my team for my university's CSE482 Web Technology course project as at that time there were e-commerce websites of my country but not auction sites, so we wanted to be the pioneer. In this project, I wrote the HTML and CSS code and made the mySQL database, and my teammate wrote the PHP code.</p>",
+    "duration": "May 2018 to August 2018",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "secbot",
+    "title": "Description of the Project",
+    "heading": "SECRET BOT: A BLUETOOTH CONTROLLED SPY ROBOT",
+    "subtitle": "A Tactical Vehicle controlled by android device that can send real-time stream",
+    "content": "<p align='justify'>Secret Bot: A Bluetooth Controlled Spy Robot is an Arduino Uno based robot that can be monitored and controlled by an Android device using an Android application. The Wireless Network Camera mounted on the robot can also be displayed on any other Android/iOS device for monitoring. In this project simple materials are used like plastic wood for the chassis, cycle spokes for the wheel axle, L293D motor driver and two 600 rpm DC motors for propulsion in four directions namely front, reverse, left and right. Bluetooth module HC-05 is used to receive commands in the form of strings from the Android application. The robot is covered with camouflage texture so that it does not alert surroundings. It is made up of simple materials rather than preassembled kits because the materials are readily and cheaply available, the robot becomes very lightweight and it can be formed into any desired size. The July 2016 Dhaka Attack was the inspiration to make this robot which can assist law enforcers to take action against terrorists.</p><p>This project was accepted for ICICSA 2018 Conference at Thailand and Scientific paper of this project was published on IJPAM Journal which can be <a href='https://acadpubl.eu/jsi/2018-118-18/articles/18d/20.pdf' target='blank'>read here.</a></p><iframe width='100%' height='315' src='https://www.youtube.com/embed/jfl09E83yYQ' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+    "technology": "C++ (Arduino IDE), Bluetooth API (Remote Control), ONVIF SDK (IP Camera)",
+    "role": "<p align='justify'>I solely designed and developed the robot including hardware and software, and the idea was concieved by my faculty supervisor, for my university's CSE299 Junior Design Project.</p>",
+    "duration": "September 2017 to December 2017",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "samr",
+    "title": "Description of the Project",
+    "heading": "OBSTRUCTION DETECTING ROBOT",
+    "subtitle": "A Robot that Navigates using a Given Map while sensing any obstruction",
+    "content": "<p align='justify'>This is an Arduino Uno based obstruction-detecting robot which first moves forward for 10 sec, then left for 10 sec, then right for 10 sec, then stops. If there is any obstacle in its way, the robot do not move until the obstacle is removed. Obstacle is detected by the robot's HC-SR04 ultrasound sensor such that if distance between obstacle and sensor is less than 4 cm the DC motors will stop.</p><img src='assets/img/portfolio/portsamr.jpg' width='100%'>",
+    "technology": "C++ (Arduino IDE)",
+    "role": "I solely designed and developed this robot, including both its hardware and software, for my university's CSE331 Microprocessor Interfacing Project.",
+    "duration": "September to December 2017",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "syner",
+    "title": "Description of the Project",
+    "heading": "SYNER MONEY EXCHANGE SOFTWARE",
+    "subtitle": "A book-entry software for a money-exchange",
+    "content": "<p align='justify'>This is a book-keeping software for a money exchanger called \"Syner Money Exchange\". It stores customer information and calculates currency amount from exchange rate and generates receipt when the customer exchanges money. The data fields feature complete data validation so no field can be incorrectly input. It also features customer search.</p><img src='assets/img/synerdemo.png' width='100%'>",
+    "technology": "<p align='justify'>Visual Basic (VB), ADODC component, Microsoft (MS) Access</p>",
+    "role": "<p align='justify'>I solely developed this program, including its frontend (VB Form) and backend (MS Access DB) for my A-level Computing Coursework</p>",
+    "duration": "December 2010 to January 2011",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "wleaf",
+    "title": "Description of the Project",
+    "heading": "WINTER LEAF TAILORS POS SOFTWARE",
+    "subtitle": "A Point of Sale software for a tailor shop",
+    "content": "<p align='justify'>This is a simple Point-of-Sale (POS) software for a tailor shop called \"Winter Leaf Tailors\", with complete data validation. It features:</p><ul align='justify'><li>Dealing the transaction with customers (e.g. writing Cash Memo and printing it out)</li><li>Store Personal Details of the customers</li><li>Inventory Management(for the company's staff members)</li><li>Storing length measurements useful for making clothes</li><li>Customer Search</li><li>Login to access the interface</li></ul><img src='assets/img/wltailorsdemo.png' width='100%'>",
+    "technology": "<p align='justify'>Visual Basic (VB), ADODC component, Microsoft (MS) Access</p>",
+    "role": "<p align='justify'>I solely developed this program, including its frontend (VB Form) and backend (MS Access DB) for my O-level Computer Studies Coursework</p>",
+    "duration": "June 2008 to August 2008",
+    "buttonClass": "btn-primary"
+  },
+  {
+    "id": "gdesign",
+    "title": "Description of the Projects",
+    "heading": "GRAPHICS DESIGN",
+    "subtitle": "",
+    "content": "<p align='justify'>I took part in <a href='https://docs.google.com/forms/d/e/1FAIpQLSfJVJ9Yh5B-CWOR9SG_l_uU2akn9m5zB3-LfKLoqydQDq-6SQ/closedform' target='blank'>Logo Design Competition</a> for National Cricket Skipper Mushfiqur Rahim and I designed the logo using Adobe Illustrator.</p><p align='center'><img src='assets/img/mr15_logo.jpg' width='50%'></p><p align='justify'>I also designed banner for a resort using Adobe Photoshop.</p><p align='center'><img src='assets/img/Purbachal_resort_english_min.jpg' width='50%'></p>",
+    "technology": "Adobe Suite (Illustrator, Photoshop)",
+    "role": "I conceptualized and executed both design projects independently.",
+    "duration": "Various (2015-2016)",
+    "buttonClass": "btn-primary"
+  }
+]
