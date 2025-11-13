@@ -99,11 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a class="d-block mx-auto portfolio-item" href="#projectModal" data-bs-toggle="modal" data-project-id="${project.id}">
                         <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
                             <div class="text-center text-white my-auto portfolio-item-caption-content w-100 px-2">
-                                <h4 class="folio-card-title">${project.heading}</h4>
-                                <p class="mb-0 folio-card-body fs-6">${project.subtitle}</p>
+                                <h4 class="folio-card-title fs-2">${project.heading}</h4>
+                                <p class="mb-4 folio-card-body fs-6">${project.subtitle}</p>
+                                <p class="mb-0 folio-card-body fs-6 badge border">${project.duration}</p>
                             </div>
                         </div>
-                        <img class="img-fluid shadow-sm" src="assets/img/portfolio/port${project.id}.jpg" alt="${project.heading}">
+                        <img class="img-fluid" src="assets/img/portfolio/port${project.id}.jpg" alt="${project.heading}" style="border-radius:15px;">
                     </a>
                 `;
                 container.appendChild(col);
